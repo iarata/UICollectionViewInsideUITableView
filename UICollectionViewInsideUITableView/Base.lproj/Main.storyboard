@@ -1,24 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UICollectionViewInsideUITableView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RMb-tf-7l4" userLabel="Animes">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="animeTableCell" rowHeight="140" id="NfL-21-J5i" userLabel="AnimesCell" customClass="AnimesTableViewCell" customModule="UICollectionViewInsideUITableView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NfL-21-J5i" id="fbu-7g-6dq">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wic-66-3Sg" userLabel="AnimeCollection">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="00f-z1-F51">
+                                                        <size key="itemSize" width="250" height="140"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="animeCollectionCell" id="TBG-yn-U1i" customClass="AnimeCollectionViewCell" customModule="UICollectionViewInsideUITableView" customModuleProvider="target">
+                                                            <rect key="frame" x="82" y="0.0" width="250" height="140"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gnB-B3-jXo">
+                                                                <rect key="frame" x="0.0" y="0.0" width="250" height="140"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zlh-0h-e59">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="250" height="140"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="Zlh-0h-e59" firstAttribute="leading" secondItem="gnB-B3-jXo" secondAttribute="leading" id="6rH-a8-sdd"/>
+                                                                    <constraint firstItem="Zlh-0h-e59" firstAttribute="top" secondItem="gnB-B3-jXo" secondAttribute="top" id="cZU-5O-DOL"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Zlh-0h-e59" secondAttribute="trailing" id="sNS-hM-rXZ"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Zlh-0h-e59" secondAttribute="bottom" id="uxo-dw-UtM"/>
+                                                                </constraints>
+                                                            </collectionViewCellContentView>
+                                                            <size key="customSize" width="250" height="140"/>
+                                                            <connections>
+                                                                <outlet property="animeIMAGE" destination="Zlh-0h-e59" id="gl9-vS-hfX"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="NfL-21-J5i" id="iG1-HN-cbj"/>
+                                                        <outlet property="delegate" destination="NfL-21-J5i" id="Dgf-Ae-qO5"/>
+                                                    </connections>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="wic-66-3Sg" secondAttribute="trailing" id="C3s-Kn-4t1"/>
+                                                <constraint firstAttribute="bottom" secondItem="wic-66-3Sg" secondAttribute="bottom" id="IcI-JK-7SO"/>
+                                                <constraint firstItem="wic-66-3Sg" firstAttribute="leading" secondItem="fbu-7g-6dq" secondAttribute="leading" id="gTs-Fq-0zH"/>
+                                                <constraint firstItem="wic-66-3Sg" firstAttribute="top" secondItem="fbu-7g-6dq" secondAttribute="top" id="ykN-av-EZE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="animeUICollectionView" destination="wic-66-3Sg" id="Uua-H9-071"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="nj7-Gy-yvR"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="beh-UH-sxj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RMb-tf-7l4" secondAttribute="trailing" id="RCY-qV-FwV"/>
+                            <constraint firstItem="RMb-tf-7l4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cgj-fI-IRy"/>
+                            <constraint firstItem="RMb-tf-7l4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="u06-3r-b8z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RMb-tf-7l4" secondAttribute="bottom" id="w4s-ra-c8i"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="animeTABLEVIEW" destination="RMb-tf-7l4" id="JNF-74-hjU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="136.95652173913044"/>
         </scene>
     </scenes>
 </document>
